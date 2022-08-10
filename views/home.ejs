@@ -1,0 +1,28 @@
+<%- include("header") -%>
+
+<div class="container pt-5">
+  <h1>Welcome</h1>
+  <p>This is pig's blog <%= startingContent %> </p>
+
+  <% posts.forEach((post)=> { %>
+
+    <form action="/delete" method="post">
+      <button type="submit" name="deleteId" value=<%= post._id %> class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </form>
+
+    <h1> <%= post.title %> </h1>
+    <p>   
+      <%= post.content.substring(0, 100) %>
+      ...
+      <% if (post.content.length >= 100) { %>
+        <% const url = '/' + post._id; %>
+        <a class="ml-3" href=<%= url %>  >  Learn more...</a>
+      <% }; %>
+    </p>
+  <% }); %>
+  
+</div>
+
+<%- include("footer") -%>

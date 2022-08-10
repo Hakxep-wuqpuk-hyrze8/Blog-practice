@@ -1,0 +1,36 @@
+body {
+    font-family: 'Courgette', cursive;
+}
+.content {
+    text-align: center;
+    line-height: 2rem;
+    margin: 4rem;
+    padding: 0 10rem;
+}
+.content h1 {
+    margin-bottom: 1.5rem;
+}
+.container h1 {
+    margin-bottom: 1.5rem;
+}
+
+/* compose page */
+
+.post-button {
+    width: 10%;
+}
+
+/* post page */
+
+.post {
+    text-align: center;
+    color: aqua;
+    text-shadow: 1rem;
+}
+
+/* footer */
+
+.buffer {
+    height: 10rem;
+    background-color: #FFF;
+}
