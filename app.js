@@ -28,7 +28,6 @@ const Post = mongoose.model('post', postSchema);
 let posts = [];
 
 app.get("/", function(req, res){
-  
   Post.find(function(err, foundPosts) {
     if (!err) {
       res.render("home", {
@@ -36,9 +35,7 @@ app.get("/", function(req, res){
         posts: foundPosts
       });
     }
-  });  
-
-  
+  });    
 });
 
 app.get("/about", function(req, res){
@@ -58,11 +55,8 @@ app.post("/compose", function(req, res){
     title: req.body.postTitle,
     content: req.body.postBody
   });
-
   post.save();
-
   res.redirect("/");
-
 });
 
 app.get("/:postName", function(req, res){
